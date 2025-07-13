@@ -24,7 +24,7 @@ export default function Home() {
 
     const handleSearch = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/all-searched-college?name=${searchText}`);
+      const res = await axios.get(`https://college-server-zeta.vercel.app/all-searched-college?name=${searchText}`);
       setsColleges(res.data);
     } catch (err) {
       console.error('Search failed:', err);
@@ -33,7 +33,7 @@ export default function Home() {
   
 
   useEffect(() => {
-    axios.get('http://localhost:5000/all-college')
+    axios.get('https://college-server-zeta.vercel.app/all-college')
       .then(res => {
         const firstThree = res.data.slice(0, 3);
         setColleges(firstThree)
@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/reviews')
+    axios.get('https://college-server-zeta.vercel.app/reviews')
       .then(res => setReviews(res.data))
       .catch(err => console.error('Failed to fetch reviews:', err));
   }, []);

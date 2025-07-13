@@ -31,7 +31,7 @@ const AdmissionForm = () => {
     };
 
     try {
-      const res = await axios.post('http://localhost:5000/admission', data);
+      const res = await axios.post('https://college-server-zeta.vercel.app/admission', data);
       if (res.data.insertedId) {
         setSuccess(true);
         form.reset();

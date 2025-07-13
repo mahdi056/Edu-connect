@@ -19,7 +19,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:5000/users/${user.email}`)
+      axios.get(`https://college-server-zeta.vercel.app/users/${user.email}`)
         .then(res => {
           setUserInfo(res.data);
           setFormData({
@@ -43,7 +43,7 @@ const Profile = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
 
-    axios.put(`http://localhost:5000/users/${user.email}`, formData)
+    axios.put(`https://college-server-zeta.vercel.app/users/${user.email}`, formData)
       .then(res => {
         if (res.data.modifiedCount > 0) {
           toast.success("Profile updated successfully!", {

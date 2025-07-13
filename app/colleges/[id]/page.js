@@ -12,7 +12,7 @@ const CollegeDetailsPage = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/college/${id}`)
+      axios.get(`https://college-server-zeta.vercel.app/college/${id}`)
         .then(res => setCollege(res.data))
         .catch(err => console.error('Error fetching college:', err));
     }

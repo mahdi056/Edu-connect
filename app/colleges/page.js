@@ -10,7 +10,7 @@ const Colleges = () => {
     const [colleges, setColleges] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/all-college')
+        axios.get('https://college-server-zeta.vercel.app/all-college')
             .then(res => setColleges(res.data))
             .catch(err => console.error('Error fetching colleges:', err));
     }, []);

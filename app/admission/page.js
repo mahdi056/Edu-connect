@@ -9,7 +9,7 @@ const Admission = () => {
   const [colleges, setColleges] = useState([]);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    axios.get('http://localhost:5000/all-college')
+    axios.get('https://college-server-zeta.vercel.app/all-college')
       .then(res => setColleges(res.data))
       .catch(console.error);
   }, []);

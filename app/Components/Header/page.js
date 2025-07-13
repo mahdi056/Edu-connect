@@ -13,7 +13,7 @@ const Header = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:5000/users/${user.email}`)
+      axios.get(`https://college-server-zeta.vercel.app/users/${user.email}`)
         .then(res => {
           setUserInfo(res.data);
           
