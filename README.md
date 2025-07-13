@@ -8,3 +8,6 @@
 
 ### Next.js, Firebase, Tailwind CSS, Node.js, Mongodb
 
+## Live Site
+
+### https://edu-connect-jet.vercel.app/
