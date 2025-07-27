@@ -113,7 +113,7 @@ const Register = () => {
         <ToastContainer></ToastContainer>
 
         <div className="flex justify-center items-center h-screen bg-gray-100">
-          <form
+          <form autoComplete='off'
             onSubmit={handleRegister}
             className="bg-white p-8 rounded-xl shadow-md w-full max-w-md"
           >

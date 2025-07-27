@@ -44,7 +44,8 @@ const AuthProvider = ({ children }) => {
         userLogin,
         SignOut,
         refreshTrigger,
-        setRefreshTrigger
+        setRefreshTrigger,
+        loading
 
     }
 
