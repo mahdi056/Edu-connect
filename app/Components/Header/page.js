@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi'; 
+import logo from '../../../public/images/logo.png'
+import Image from 'next/image';
 
 const Header = () => {
   const {user, SignOut, refreshTrigger} = useContext(AuthContext)
@@ -60,7 +62,15 @@ const Header = () => {
   
   return (
     <div className='flex justify-between items-center mt-2 mx-4 py-2 relative'>
-      <div className='text-xl font-bold text-info'>EDU CONNECT</div>
+      <div className='text-xl font-bold text-info'>
+      <Image
+        src={logo}
+        alt='logo'
+        width={50}
+        
+      />
+
+      </div>
 
       {/* Desktop Navigation */}
       <div className='hidden md:flex gap-x-4 items-center'>{navLinks}</div>
@@ -76,11 +86,7 @@ const Header = () => {
       {menuOpen && (
         <div className='absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-start p-4 gap-2 md:hidden z-50'>
           {navLinks}
-          {user && (
-            <Link href='/profile'>
-              <div className='border-2 border-black rounded-full p-2'>{userInfo.name}</div>
-            </Link>
-          )}
+         
           <div>
             {user ? (
               <div onClick={SignOut} className='btn btn-sm btn-error mt-2'>
@@ -97,11 +103,7 @@ const Header = () => {
 
       {/* Right Side (Always visible) */}
       <div className='hidden md:flex items-center gap-x-2'>
-        {user && (
-          <Link href='/profile'>
-            <div className='border-2 border-black rounded-full p-2'>{userInfo.name}</div>
-          </Link>
-        )}
+        
         <div>
           {user ? (
             <div onClick={SignOut} className='btn btn-sm btn-error'>

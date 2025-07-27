@@ -5,6 +5,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Link from "next/link";
+import PrivateRoute from "../Components/privateroute/page";
 
 const Colleges = () => {
     const [colleges, setColleges] = useState([]);
@@ -16,6 +17,7 @@ const Colleges = () => {
     }, []);
 
     return (
+       
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
             {colleges.map((college, index) => (
                 <div
@@ -41,6 +43,7 @@ const Colleges = () => {
                 </div>
             ))}
         </div>
+       
     );
 };
 

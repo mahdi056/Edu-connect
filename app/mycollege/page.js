@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 
 import axios from 'axios';
 import { AuthContext } from '../provider/authprovider';
+import PrivateRoute from '../Components/privateroute/page';
 
 export default function MyCollege() {
   const { user } = useContext(AuthContext);
@@ -53,6 +54,7 @@ export default function MyCollege() {
   if (admissions.length === 0) return <p className="p-6">No admissions found.</p>;
 
   return (
+    <PrivateRoute>
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">My College Details</h1>
 
@@ -108,5 +110,6 @@ export default function MyCollege() {
         </div>
       )}
     </div>
+    </PrivateRoute>
   );
 }

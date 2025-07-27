@@ -3,6 +3,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/authprovider';
+import PrivateRoute from '../Components/privateroute/page';
 
 
 const Admission = () => {
@@ -15,6 +16,7 @@ const Admission = () => {
   }, []);
 
   return (
+    <PrivateRoute>
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-6 text-center">Choose a College for Admission</h2>
 
@@ -38,6 +40,7 @@ const Admission = () => {
         })}
       </div>
     </div>
+    </PrivateRoute>
   );
 };
 
