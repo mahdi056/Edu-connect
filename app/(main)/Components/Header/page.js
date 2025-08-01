@@ -5,15 +5,15 @@ import axios from 'axios';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useContext, useEffect, useState } from 'react';
-import { HiMenu, HiX } from 'react-icons/hi'; 
-import logo from '../../../public/images/logo.png'
+import { HiMenu, HiX } from 'react-icons/hi';
+import logo from '../../../logo.png'
 import Image from 'next/image';
 
 const Header = () => {
-  const {user, SignOut, refreshTrigger} = useContext(AuthContext)
+  const { user, SignOut, refreshTrigger } = useContext(AuthContext)
   const pathname = usePathname();
   const [userInfo, setUserInfo] = useState({})
-  
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -21,13 +21,13 @@ const Header = () => {
       axios.get(`https://college-server-zeta.vercel.app/users/${user.email}`)
         .then(res => {
           setUserInfo(res.data);
-          
+
         })
         .catch(console.error);
     }
   }, [user?.email, refreshTrigger]);
 
-   const navLinks = (
+  const navLinks = (
     <>
       <Link
         href='/'
@@ -42,33 +42,41 @@ const Header = () => {
         Colleges
       </Link>
       <Link
-        href={user ? '/admissionge' : '/login'}
+        href={user ? '/admission' : '/login'}
         className={pathname === '/admission' ? 'text-black px-2 py-1 rounded-sm bg-info' : ''}
       >
         Admission
       </Link>
-      <Link
+      {/* <Link
         href={user ? '/mycollege' : '/login'}
         className={pathname === '/mycollege' ? 'text-black px-2 py-1 rounded-sm bg-info' : ''}
       >
         My College
-      </Link>
+      </Link> */}
+      {user && (
+        <Link
+          href='/profile'
+          className={pathname === ('/dashboard/profile') ? 'text-black px-2 py-1 rounded-sm bg-info' : ''}
+        >
+          Dashboard
+        </Link>
+      )}
     </>
   );
 
-  
 
-  
-  
+
+
+
   return (
     <div className='flex justify-between items-center mt-2 mx-4 py-2 relative'>
       <div className='text-xl font-bold text-info'>
-      <Image
-        src={logo}
-        alt='logo'
-        width={50}
-        
-      />
+        <Image
+          src={logo}
+          alt='logo'
+          width={50}
+
+        />
 
       </div>
 
@@ -86,7 +94,7 @@ const Header = () => {
       {menuOpen && (
         <div className='absolute top-16 left-0 w-full bg-white shadow-md flex flex-col items-start p-4 gap-2 md:hidden z-50'>
           {navLinks}
-         
+
           <div>
             {user ? (
               <div onClick={SignOut} className='btn btn-sm btn-error mt-2'>
@@ -103,7 +111,7 @@ const Header = () => {
 
       {/* Right Side (Always visible) */}
       <div className='hidden md:flex items-center gap-x-2'>
-        
+
         <div>
           {user ? (
             <div onClick={SignOut} className='btn btn-sm btn-error'>

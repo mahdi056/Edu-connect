@@ -1,17 +1,17 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import banner from '../public/images/banner.jpg';
+import banner from '../../public/images/banner.jpg';
 import axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaStar } from "react-icons/fa6";
-import g1 from '../public/images/g-1.jpg'
-import g2 from '../public/images/g-2.jpg'
-import g3 from '../public/images/g-3.jpg'
-import g4 from '../public/images/g-4.jpg'
-import g5 from '../public/images/g-5.jpg'
-import g6 from '../public/images/g-6.jpg'
+import g1 from '../../public/images/g-1.jpg'
+import g2 from '../../public/images/g-2.jpg'
+import g3 from '../../public/images/g-3.jpg'
+import g5 from '../../public/images/g-5.jpg'
+import g6 from '../../public/images/g-6.jpg'
+import g4 from '../../public/images/g-4.jpg'
 import { IoSearchSharp } from "react-icons/io5";
 
 export default function Home() {

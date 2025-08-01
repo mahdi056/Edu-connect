@@ -3,8 +3,10 @@
 import { useContext, useEffect, useState } from 'react';
 
 import axios from 'axios';
-import { AuthContext } from '../provider/authprovider';
-import PrivateRoute from '../Components/privateroute/page';
+
+
+import { AuthContext } from '@/app/provider/authprovider';
+import PrivateRoute from '../../(main)/Components/Privateroute';
 
 export default function MyCollege() {
   const { user } = useContext(AuthContext);
@@ -13,6 +15,8 @@ export default function MyCollege() {
   const [rating, setRating] = useState(5);
   const [feedback, setFeedback] = useState('');
   const [message, setMessage] = useState('');
+
+ 
 
   
   useEffect(() => {
@@ -71,7 +75,7 @@ export default function MyCollege() {
             <p><strong>Email:</strong> {adm.candidateEmail}</p>
             <p><strong>Phone:</strong> {adm.phone}</p>
             <p><strong>Address:</strong> {adm.address}</p>
-            <p><strong>DOB:</strong> {adm.dob}</p>
+            <p><strong>Date of Birth:</strong> {adm.dob}</p>
           </div>
         ))}
       </div>
@@ -113,3 +117,5 @@ export default function MyCollege() {
     </PrivateRoute>
   );
 }
+
+

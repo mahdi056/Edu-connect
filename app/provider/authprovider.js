@@ -1,7 +1,8 @@
 'use client'
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import React, { createContext, useEffect, useState } from 'react';
-import { auth } from "../Components/Header/firebase.init";
+import { auth } from "../(main)/Components/Header/firebase.init";
+
 
 
 export const AuthContext = createContext(null);
@@ -73,11 +74,17 @@ const AuthProvider = ({ children }) => {
 
     }, [])
 
+  
+
 
 
     return (
         <AuthContext.Provider value={authInfo}>
-            {children}
+            
+            {
+            
+        children
+      }
         </AuthContext.Provider>
     );
 };

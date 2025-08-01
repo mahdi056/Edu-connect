@@ -5,7 +5,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Link from "next/link";
-import PrivateRoute from "../Components/privateroute/page";
+
 
 const Colleges = () => {
     const [colleges, setColleges] = useState([]);

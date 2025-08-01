@@ -2,13 +2,15 @@
 
 import axios from 'axios';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { FaStar } from "react-icons/fa6";
+import { AuthContext } from '@/app/provider/authprovider';
 
 const CollegeDetailsPage = () => {
   const { id } = useParams();  
   const [college, setCollege] = useState(null);
+  const {loading} = useContext(AuthContext);
 
   useEffect(() => {
     if (id) {
@@ -18,7 +20,7 @@ const CollegeDetailsPage = () => {
     }
   }, [id]);
 
-  if (!college) return <div className="p-4">Loading...</div>;
+  if (!college) return <p>Loading...</p>
 
   return (
     <div className="max-w-4xl mx-auto p-6">

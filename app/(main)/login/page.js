@@ -4,7 +4,8 @@ import React, { useContext, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { AuthContext } from '../provider/authprovider';
+import { AuthContext } from '@/app/provider/authprovider';
+
 
 const Login = () => {
 
@@ -33,7 +34,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form autoComplete='off' 
+      <form 
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md"
       >

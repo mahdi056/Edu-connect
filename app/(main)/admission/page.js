@@ -2,8 +2,9 @@
 import axios from 'axios';
 import Link from 'next/link';
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../provider/authprovider';
-import PrivateRoute from '../Components/privateroute/page';
+
+import { AuthContext } from '@/app/provider/authprovider';
+import PrivateRoute from '../Components/Privateroute';
 
 
 const Admission = () => {
