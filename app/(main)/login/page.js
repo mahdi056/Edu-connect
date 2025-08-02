@@ -5,6 +5,7 @@ import React, { useContext, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { AuthContext } from '@/app/provider/authprovider';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const Login = () => {
@@ -26,6 +27,12 @@ const Login = () => {
                 router.push('/');
             })
             .catch((error) => {
+                toast.error("Please Register",{
+                  position: 'top-center',
+                  autoClose: 2000
+                }
+                  
+                )
                 console.error(error.message)
             });
 
@@ -33,7 +40,9 @@ const Login = () => {
   };
 
   return (
+    
     <div className="flex justify-center items-center h-screen bg-gray-100">
+      <ToastContainer></ToastContainer>
       <form 
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-xl shadow-md w-full max-w-md"

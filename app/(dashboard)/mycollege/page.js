@@ -21,7 +21,7 @@ export default function MyCollege() {
   
   useEffect(() => {
     if (user?.email) {
-      axios.get(`https://college-server-zeta.vercel.app/admissions?userEmail=${user.email}`)
+      axios.get(`http://localhost:5000/admissions?userEmail=${user.email}`)
         .then(res => {
           setAdmissions(res.data);
           if (res.data.length > 0) setSelectedCollege(res.data[0]);
@@ -37,7 +37,7 @@ export default function MyCollege() {
     if (!selectedCollege) return;
 
     try {
-      const res = await axios.post('https://college-server-zeta.vercel.app/review', {
+      const res = await axios.post('http://localhost:5000/review', {
         userEmail: user.email,
         collegeName: selectedCollege.collegeName,
         rating,
