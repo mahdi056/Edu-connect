@@ -5,13 +5,20 @@ import React, { useState, useContext, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import axios from 'axios';
 import AuthProvider, { AuthContext } from '@/app/provider/authprovider';
-import { usePathname } from 'next/navigation';  // <---- Add this import
+import { usePathname } from 'next/navigation';  
+import { FaRegUser } from "react-icons/fa6";
+import { FaUniversity } from "react-icons/fa";
+import { MdPendingActions } from "react-icons/md";
+import { FaHome } from "react-icons/fa";
+import { IoMdAdd } from "react-icons/io";
+import { MdManageAccounts } from "react-icons/md";
+import { FaUsers } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext); 
   const [role, setRole] = useState(null); 
-  const pathname = usePathname(); // <---- get current route
+  const pathname = usePathname(); 
 
   useEffect(() => {
     if (user?.email) {
@@ -37,12 +44,12 @@ const Sidebar = () => {
     <>
       <h2 className="text-2xl font-bold mb-6 text-blue-600">Admin Panel</h2>
       <nav className="space-y-4">
-        <Link href="/adminprofile" className={linkClass('/adminprofile')}>Admin Profile</Link>
-        <Link href="/addcollege" className={linkClass('/addcollege')}>Add College</Link>
-        <Link href="/mngcollege" className={linkClass('/mngcollege')}>Manage College</Link>
-        <Link href="/mngadmission" className={linkClass('/mngadmission')}>Manage Admission</Link>
-        <Link href="/users" className={linkClass('/users')}>Manage Users</Link>
-        <Link href="/" className={linkClass('/')}>Home</Link>
+        <Link href="/adminprofile" className={linkClass('/adminprofile')}> <div className='flex items-center gap-x-2 text-info'><FaRegUser></FaRegUser>Admin Profile</div></Link>
+        <Link href="/addcollege" className={linkClass('/addcollege')}><div className='flex items-center gap-x-2 text-info'><IoMdAdd></IoMdAdd>Add College</div></Link>
+        <Link href="/mngcollege" className={linkClass('/mngcollege')}><div className='flex items-center gap-x-2 text-info'><MdManageAccounts></MdManageAccounts>Manage College</div></Link>
+        <Link href="/mngadmission" className={linkClass('/mngadmission')}><div className='flex items-center gap-x-2 text-info'><MdPendingActions></MdPendingActions>Manage Admission</div></Link>
+        <Link href="/users" className={linkClass('/users')}><div className='flex items-center gap-x-2 text-info'><FaUsers></FaUsers>Manage Users</div></Link>
+        <Link href="/" className={linkClass('/')}><div className='flex items-center gap-x-2 text-info'><FaHome></FaHome>Home</div></Link>
       </nav>
     </>
   );
@@ -51,10 +58,12 @@ const Sidebar = () => {
     <>
       <h2 className="text-2xl font-bold mb-6 text-blue-600">Edu Connect</h2>
       <nav className="space-y-4">
-        <Link href="/profile" className={linkClass('/profile')}>Profile</Link>
-        <Link href="/mycollege" className={linkClass('/mycollege')}>My College</Link>
-        <Link href="/admissionstatus" className={linkClass('/admissionstatus')}>Admission Status</Link>
-        <Link href="/" className={linkClass('/')}>Home</Link>
+        <Link href="/profile" className={linkClass('/profile')}> <div className='flex items-center gap-x-2 text-info'><FaRegUser></FaRegUser> Profile</div></Link>
+
+        <Link href="/mycollege" className={linkClass('/mycollege')}><div className='flex items-center gap-x-2 text-info'><FaUniversity></FaUniversity>My College</div></Link>
+
+        <Link href="/admissionstatus" className={linkClass('/admissionstatus')}><div className='flex items-center gap-x-2 text-info'><MdPendingActions></MdPendingActions>Admission Status</div></Link>
+        <Link href="/" className={linkClass('/')}><div className='flex items-center gap-x-2 text-info'><span><FaHome></FaHome></span>Home</div></Link>
       </nav>
     </>
   );

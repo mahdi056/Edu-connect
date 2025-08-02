@@ -70,12 +70,12 @@ const Header = () => {
 
   return (
     <div className='flex justify-between items-center mt-2 mx-4 py-2 relative'>
-      <div className='text-xl font-bold text-info'>
+      <div className=''>
         <Image
           src={logo}
           alt='logo'
           width={50}
-
+          height={50}
         />
 
       </div>
@@ -110,7 +110,11 @@ const Header = () => {
       )}
 
       {/* Right Side (Always visible) */}
-      <div className='hidden md:flex items-center gap-x-2'>
+      <div className='hidden md:flex items-center gap-x-4'>
+
+        {
+          user && <div>Hi! {user.displayName}</div>
+        }
 
         <div>
           {user ? (
