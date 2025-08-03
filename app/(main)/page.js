@@ -52,15 +52,15 @@ export default function Home() {
     <div>
       {/* banner */}
       <div
-        className="h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-4"
+        className="h-[80vh] bg-cover bg-center flex flex-col justify-center items-center text-white text-center px-4 "
         style={{
           backgroundImage: `url(${banner.src})`,
         }}
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to College Booking</h1>
-        <p className="text-lg md:text-xl mb-6">Search and book top colleges and facilities in one click!</p>
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to Edu Connect</h1>
+        <p className="text-lg md:text-xl mb-12">Search and Book Top Colleges and Facilities in one click!</p>
 
-        <div className="w-full max-w-md flex items-center gap-x-2">
+        <div className="w-full max-w-md flex items-center gap-x-2 mb-8">
           <input
             type="text"
             value={searchText}
