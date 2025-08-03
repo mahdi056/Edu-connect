@@ -52,7 +52,7 @@ const AddCollege = () => {
         sports: formData.sports.split(',').map(s => s.trim()),
       };
 
-      await axios.post('http://localhost:5000/colleges', collegeData);
+      await axios.post('https://college-server-zeta.vercel.app/colleges', collegeData);
 
       toast.success('College added successfully', {
         position: 'top-center',

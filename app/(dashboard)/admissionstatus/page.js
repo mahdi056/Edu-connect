@@ -10,7 +10,7 @@ const AdmissionStatus = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:5000/admissions?userEmail=${user.email}`)
+      axios.get(`https://college-server-zeta.vercel.app/admissions?userEmail=${user.email}`)
         .then(res => {
           setAdmissions(res.data);
 

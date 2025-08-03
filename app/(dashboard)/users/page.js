@@ -12,7 +12,7 @@ const Users = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/users');
+      const res = await axios.get('https://college-server-zeta.vercel.app/users');
       setUsers(res.data);
     } catch (err) {
       console.error('Error fetching users:', err);
@@ -21,7 +21,7 @@ const Users = () => {
 
   const handleRoleChange = async (id, role) => {
     try {
-      const res = await axios.patch(`http://localhost:5000/users/${id}`, { role });
+      const res = await axios.patch(`https://college-server-zeta.vercel.app/users/${id}`, { role });
 
       if (res.data.modifiedCount > 0) {
         MySwal.fire({

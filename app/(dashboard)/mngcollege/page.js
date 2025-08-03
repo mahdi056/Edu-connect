@@ -17,7 +17,7 @@ const ManageCollege = () => {
 
   const fetchColleges = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/all-college');
+      const res = await axios.get('https://college-server-zeta.vercel.app/all-college');
       setColleges(res.data);
     } catch (err) {
       console.error('Error fetching colleges:', err);
@@ -37,7 +37,7 @@ const ManageCollege = () => {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:5000/colleges/${id}`);
+        await axios.delete(`https://college-server-zeta.vercel.app/colleges/${id}`);
         setColleges(prev => prev.filter(college => college._id !== id));
         MySwal.fire('Deleted!', 'The college has been deleted.', 'success');
       } catch (error) {

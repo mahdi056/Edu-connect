@@ -24,7 +24,7 @@ export default function Home() {
 
     const handleSearch = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/all-searched-college?name=${searchText}`);
+      const res = await axios.get(`https://college-server-zeta.vercel.app/all-searched-college?name=${searchText}`);
       setsColleges(res.data);
     } catch (err) {
       console.error('Search failed:', err);
@@ -33,7 +33,7 @@ export default function Home() {
   
 
   useEffect(() => {
-    axios.get('http://localhost:5000/all-college')
+    axios.get('https://college-server-zeta.vercel.app/all-college')
       .then(res => {
         const firstThree = res.data.slice(0, 3);
         setColleges(firstThree)
@@ -42,7 +42,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/reviews')
+    axios.get('https://college-server-zeta.vercel.app/reviews')
       .then(res => setReviews(res.data))
       .catch(err => console.error('Failed to fetch reviews:', err));
   }, []);
@@ -76,11 +76,11 @@ export default function Home() {
 
       {/* college card */}
 
-       <div>
+       <div className='mt-12'>
         
          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
         {scolleges.map((college, index) => (
-          <div key={index} className="border p-4 shadow rounded">
+          <div key={index} className="p-4 shadow-lg rounded">
             <Image
               src={college.image}
               alt={college.name}
@@ -102,11 +102,11 @@ export default function Home() {
 
       {/* 3 cards */}
 
-     <div className='mt-4'>
+     <div className='mt-12'>
       <h2 className='text-2xl text-center font-bold'>Top Colleges</h2>
        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
         {colleges.map((college, index) => (
-          <div key={index} className="border rounded-lg shadow p-4">
+          <div key={index} className="rounded-lg shadow-lg p-4">
             <div className="relative w-full h-48 mb-4">
               <Image
                 src={college.image}
@@ -130,7 +130,7 @@ export default function Home() {
      </div>
       {/* image section */}
 
-      <div className="p-6">
+      <div className="p-6 mt-8">
 
 
 

@@ -18,7 +18,7 @@ const Header = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:5000/users/${user.email}`)
+      axios.get(`https://college-server-zeta.vercel.app/users/${user.email}`)
         .then(res => {
           setUserInfo(res.data);
 
@@ -47,12 +47,12 @@ const Header = () => {
       >
         Admission
       </Link>
-      {/* <Link
-        href={user ? '/mycollege' : '/login'}
-        className={pathname === '/mycollege' ? 'text-black px-2 py-1 rounded-sm bg-info' : ''}
+      <Link
+        href='aboutus'
+        className={pathname === '/aboutus' ? 'text-black px-2 py-1 rounded-sm bg-info' : ''}
       >
-        My College
-      </Link> */}
+        About Us
+      </Link>
       {user && (
         <Link
           href='/profile'

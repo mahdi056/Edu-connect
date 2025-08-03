@@ -17,7 +17,7 @@ const ManageAdmission = () => {
 
   const fetchAdmissions = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/admin/admissions');
+      const res = await axios.get('https://college-server-zeta.vercel.app/admin/admissions');
       setAdmissions(res.data);
     } catch (error) {
       console.error(error);
@@ -36,7 +36,7 @@ const ManageAdmission = () => {
 
       if (!result.isConfirmed) return;
 
-      await axios.patch(`http://localhost:5000/admin/admission/${id}`, { status });
+      await axios.patch(`https://college-server-zeta.vercel.app/admin/admission/${id}`, { status });
       fetchAdmissions();
 
       MySwal.fire('Updated!', `The application has been ${status ? 'accepted' : 'rejected'}.`, 'success');
@@ -58,7 +58,7 @@ const ManageAdmission = () => {
     if (!result.isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:5000/admin/admission/${id}`);
+      await axios.delete(`https://college-server-zeta.vercel.app/admin/admission/${id}`);
       setAdmissions(prev => prev.filter(ad => ad._id !== id));
 
       MySwal.fire('Deleted!', 'The admission has been removed.', 'success');

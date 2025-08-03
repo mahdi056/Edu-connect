@@ -29,7 +29,7 @@ const Register = () => {
             };
     
             try {
-                const res = await axios.post('http://localhost:5000/users', userInfo);
+                const res = await axios.post('https://college-server-zeta.vercel.app/users', userInfo);
                 if (res.data.insertedId) {
                     
                     router.push('/');
@@ -84,7 +84,7 @@ const Register = () => {
 
       const userInfo = { name, email, location }
 
-      const res = await axios.post('http://localhost:5000/users', userInfo)
+      const res = await axios.post('https://college-server-zeta.vercel.app/users', userInfo)
 
       if (res.data.insertedId) {
         

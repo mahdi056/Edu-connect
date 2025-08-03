@@ -22,7 +22,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (user?.email) {
-      axios.get(`http://localhost:5000/users/${user.email}`)
+      axios.get(`https://college-server-zeta.vercel.app/users/${user.email}`)
         .then(res => setRole(res.data.role)) 
         .catch(err => {
           console.error('Failed to fetch user role', err);
