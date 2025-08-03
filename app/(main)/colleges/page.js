@@ -22,7 +22,7 @@ const Colleges = () => {
             {colleges.map((college, index) => (
                 <div
                     key={index}
-                    className="border rounded-lg shadow-md p-4 hover:shadow-xl transition"
+                    className="rounded-lg shadow-md p-4 hover:shadow-xl transition"
                 >
                     <div className="w-full h-48 relative mb-4 rounded overflow-hidden">
                         <Image

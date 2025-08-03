@@ -8,14 +8,15 @@ import Sidebar from "./components/sidebar";
 export const metadata = {
   title: "Edu Connect",
   description: "Online College Booking System",
-  icons: {
-    icon: '/images/logo.png'
-  }
+  
 };
 
 export default function DashboardLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
+      <head>
+        <link rel="icon" href="/images/logo.png" />
+      </head>
       <body>
         <AuthProvider>
           <div className="flex min-h-screen bg-gray-100">

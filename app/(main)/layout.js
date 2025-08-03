@@ -16,9 +16,7 @@ import AuthProvider from "../provider/authprovider";
 export const metadata = {
   title: "Edu Connect",
   description: "Online College Booking System",
-  icons: {
-    icon: '/images/logo.png'
-  }
+ 
 };
 
 export default function RootLayout({ children }) {
@@ -28,6 +26,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" data-theme='light'>
+      <head>
+        <link rel="icon" href="/images/logo.png" />
+      </head>
      
       <body
 

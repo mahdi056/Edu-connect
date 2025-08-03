@@ -130,7 +130,7 @@ export default function Home() {
      </div>
       {/* image section */}
 
-      <div className="p-6 mt-8">
+      <div className="p-6 mt-4">
 
 
 
